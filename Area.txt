@@ -1,0 +1,30 @@
+using Microsoft.EntityFrameworkCore;
+
+
+namespace DrOffice.Models
+{
+   
+ public class Area{
+     
+ public string CityName { get; set; }
+       
+ public string ZipCode { get; set; }
+       
+ public string address { get; set; }
+               
+ public UserType Type { get; set; }
+    }
+
+   
+   
+ public class AreaContext : DbContext
+    {
+      
+  public DbSet<Area> Areas { get; set; }
+    
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source=Office.db");
+        }
+    }
+}

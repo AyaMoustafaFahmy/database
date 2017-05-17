@@ -1,0 +1,34 @@
+using Microsoft.EntityFrameworkCore;
+
+
+namespace DrOffice.Models
+{
+ 
+     public class history {
+  
+     public int visit_Id {get; set; }
+   
+     public int patient_SSN { get; set; }
+
+     
+   
+ }
+
+   
+ 
+
+  
+ public class UserContext : DbContext
+    {
+       
+             public DbSet<office_owner> office_owners { get; set; }
+     
+             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+     
+                     {
+ optionsBuilder.UseSqlite("Data Source=Office.db");
+ }
+     
+}
+
+}
